@@ -3,7 +3,7 @@ import http from 'http';
 import { createTicket, listTickets, updateTicket, deleteTicket, getStats } from './handlers/tickets.js';
 
 const PORT = process.env.PORT || 3000;
-const FRONTEND_URL = process.env.FRONTEND_URL || '*';
+const FRONTEND_URL = (process.env.FRONTEND_URL || '*').replace(/\/$/, '');
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': FRONTEND_URL,
